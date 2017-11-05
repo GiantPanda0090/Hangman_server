@@ -75,7 +75,7 @@ private String receive(){
                         send(new Integer(strLength).toString());
                         int currentChance = strLength;
                         //start testing answeres
-                        while (currentChance != 0) {
+                        while (currentChance != 0&&strLength!=0) {
                             send("gamestart");
                             String currentAnswer = receive();
                             System.out.println("User Input: " + currentAnswer);
@@ -88,7 +88,7 @@ private String receive(){
                                     send("KO");
                                     break;
                                 } else if (currentQuestion.contains(currentAnswer)) {
-                                    currentQuestion = removeCharAt(currentQuestion, currentQuestion.indexOf(currentAnswer));
+                                    currentQuestion = removeCharAt(currentQuestion, currentAnswer);
                                     System.out.println("The answer is correct!");
                                     send("correct");
                                 } else {
@@ -136,8 +136,12 @@ e.printStackTrace();
     Reference from:
     https://www.tutorialspoint.com/javaexamples/string_removing_char.htm
      */
-    public static String removeCharAt(String s, int pos) {
-        return s.substring(0, pos) + s.substring(pos + 1);
+    public static String removeCharAt(String currentQuestion, String currentAnswer) {
+        String input =currentQuestion;
+        while(input.contains(currentAnswer)){
+            input=input.substring(0, input.indexOf(currentAnswer)) + input.substring(input.indexOf(currentAnswer) + 1);
+        }
+        return input;
     }
 
 
