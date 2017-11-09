@@ -28,7 +28,7 @@ public class Hanger implements Runnable{
         while(!fromFile.ready()) {
     }
     while(fromFile.readLine()!=null) {
-        libraryLst.add(fromFile.readLine().toString());
+        libraryLst.add(fromFile.readLine().toString().toLowerCase());
     }
     System.out.println("Dictionary loaded!");
     fromFile.close();
@@ -78,7 +78,9 @@ private String receive(){
                         while (currentChance != 0&&strLength!=0) {
                             send("gamestart");
                             String currentAnswer = receive();
-                            System.out.println("User Input: " + currentAnswer);
+                            if (currentAnswer != null) {//do not handle null input from client
+                                System.out.println("User Input: " + currentAnswer);
+                            }
                             //currect answer
                             try {
                                 if (currentAnswer.length() > 1 && currentQuestion.compareTo(currentAnswer) == 0) {
@@ -101,6 +103,7 @@ private String receive(){
                             System.out.println("Remained Questions: " + currentQuestion);
                             strLength = currentQuestion.length();
                             currentChance--;
+
 
                         }
                         send("end");

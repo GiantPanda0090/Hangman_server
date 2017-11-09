@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
+    //data structures
     private static final int LINGER_TIME=5000;
     private static int portNo=9000;
 
