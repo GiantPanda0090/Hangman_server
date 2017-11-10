@@ -25,7 +25,7 @@ public class Stop implements Runnable {
             try {
                 while (!(backdoorReceive().compareTo("quit") == 0)) {
                 }
-                System.err.println("Triggered client termination!!");
+                System.err.println("!!Triggered client termination!!");
             }catch (NullPointerException e){
                 System.err.println();
                 System.err.println("======================================================================");
