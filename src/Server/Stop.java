@@ -1,3 +1,5 @@
+package Server;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,14 +29,14 @@ public class Stop implements Runnable {
             }catch (NullPointerException e){
                 System.err.println();
                 System.err.println("======================================================================");
-                System.err.println("Server has terminate the connection due to client not reachable issue!");
+                System.err.println("Server.Server has terminate the connection due to client not reachable issue!");
                 System.err.println("======================================================================");
                 System.err.println();
 
             }catch (SocketException e){
                 System.err.println();
                 System.err.println("======================================================================");
-                System.err.println("Server has terminate the connection due to client not reachable issue!");
+                System.err.println("Server.Server has terminate the connection due to client not reachable issue!");
                 System.err.println("======================================================================");
                 System.err.println();
             }

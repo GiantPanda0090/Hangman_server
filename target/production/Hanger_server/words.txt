@@ -42006,7 +42006,7 @@ serum
 servant
 serve
 served
-server
+Server
 service
 serviceable
 serviced
@@ -44858,7 +44858,7 @@ stool
 stoop
 stooped
 stooping
-Stop
+Server.Stop
 stopcock
 stopgap
 stoplight

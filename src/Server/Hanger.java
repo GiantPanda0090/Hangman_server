@@ -1,10 +1,9 @@
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+package Server;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Hanger implements Runnable{
     private static Socket clientSocket=null;
@@ -127,7 +126,7 @@ private String receive(){
             }catch (NullPointerException e){
                 System.err.println();
                 System.err.println("======================================================================");
-                System.err.println("Server has terminate the connection due to client not reachable issue!");
+                System.err.println("Server.Server has terminate the connection due to client not reachable issue!");
                 System.err.println("======================================================================");
             }
         }catch(IOException e){

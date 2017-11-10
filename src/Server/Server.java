@@ -1,4 +1,4 @@
-import com.sun.security.ntlm.Client;
+package Server;
 
 import java.io.*;
 import java.net.ServerSocket;
